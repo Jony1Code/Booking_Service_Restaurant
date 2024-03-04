@@ -1,0 +1,19 @@
+<header class="header">
+  <div class="header__container">
+    <div class="header__container button-home">
+      <button mat-fab color="primary" class="button button--home">
+        <mat-icon>home</mat-icon>
+      </button>
+    </div>
+    <div class="header__container buttons-auth">
+      <button
+        mat-raised-button
+        color="primary"
+        class="button button--authorization"
+        (click)="openLoginModal()"
+      >
+        Войти / Зарегистрироваться
+      </button>
+    </div>
+  </div>
+</header>

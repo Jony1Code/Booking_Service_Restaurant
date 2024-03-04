@@ -1,0 +1,13 @@
+<div class="table-reservation">
+  <h2>Бронирование столиков</h2>
+  <div class="tables-list">
+    <div *ngFor="let table of tables" class="table">
+      <span class="table-number">{{ table.number }}</span>
+      <span class="seats">Мест: {{ table.seats }}</span>
+    </div>
+  </div>
+  <div class="restaurant-map">
+    <!-- Здесь может быть встраиваемая карта ресторана -->
+    <p>Карта ресторана</p>
+  </div>
+</div>

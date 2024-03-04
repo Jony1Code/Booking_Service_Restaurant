@@ -1,0 +1,74 @@
+<div class="container">
+  <span>У вас есть аккаунт?</span>
+  <div [formGroup]="form" class="container__optional">
+    <mat-radio-group formControlName="authType">
+      <mat-radio-button checked value="login">Войти</mat-radio-button>
+      <mat-radio-button value="register">Зарегистрироваться</mat-radio-button>
+    </mat-radio-group>
+  </div>
+  <div [ngSwitch]="form.controls['authType'].value">
+    <ng-container *ngSwitchCase="'login'">
+      <div class="login-form">
+        <h2 class="login-form__title">Авторизация</h2>
+        <form (ngSubmit)="onSubmit()">
+          <label class="login-form__label">
+            Электронная почта:
+            <input
+              type="email"
+              [(ngModel)]="model.email"
+              name="email"
+              required
+            />
+          </label>
+          <label class="login-form__label">
+            Пароль:
+            <input
+              type="password"
+              [(ngModel)]="model.password"
+              name="password"
+              required
+            />
+          </label>
+          <button type="submit" class="login-form__submit-button">Войти</button>
+        </form>
+      </div>
+    </ng-container>
+    <ng-container *ngSwitchCase="'register'">
+      <div class="registration-form">
+        <h2 class="registration-form__title">Регистрация</h2>
+        <form (ngSubmit)="onSubmit()">
+          <label class="registration-form__label">
+            Имя пользователя:
+            <input
+              type="text"
+              [(ngModel)]="model.username"
+              name="username"
+              required
+            />
+          </label>
+          <label class="registration-form__label">
+            Электронная почта:
+            <input
+              type="email"
+              [(ngModel)]="model.email"
+              name="email"
+              required
+            />
+          </label>
+          <label class="registration-form__label">
+            Пароль:
+            <input
+              type="password"
+              [(ngModel)]="model.password"
+              name="password"
+              required
+            />
+          </label>
+          <button type="submit" class="registration-form__submit-button">
+            Зарегистрироваться
+          </button>
+        </form>
+      </div>
+    </ng-container>
+  </div>
+</div>
