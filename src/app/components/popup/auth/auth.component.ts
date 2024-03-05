@@ -1,6 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 
+interface authData {
+  username: string;
+  email?: string;
+  password: string;
+}
+
 @Component({
   selector: 'app-auth',
   templateUrl: './auth.component.html',
@@ -8,6 +14,11 @@ import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 })
 export class AuthComponent implements OnInit {
   public form!: FormGroup;
+  public model: authData = {
+    username: '',
+    email: '',
+    password: '',
+  };
 
   constructor(private fb: FormBuilder) {}
 
@@ -17,11 +28,7 @@ export class AuthComponent implements OnInit {
     });
   }
 
-  model: { username: string; email: string; password: string } = {
-    username: '',
-    email: '',
-    password: '',
-  };
-
-  onSubmit(): void {}
+  onSubmit(): void {
+    console.log(this.model);
+  }
 }

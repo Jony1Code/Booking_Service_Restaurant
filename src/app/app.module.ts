@@ -10,8 +10,9 @@ import { MainComponent } from './components/main/main.component';
 import { MatRadioModule } from '@angular/material/radio';
 import { PopupComponent } from './components/popup/popup.component';
 import { MatDialogModule } from '@angular/material/dialog';
-import { AuthComponent } from './components/auth/auth.component';
+import { AuthComponent } from './components/popup/auth/auth.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HighlightDirective } from './directives/highlight.dirictive';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MainComponent,
     PopupComponent,
     AuthComponent,
+    HighlightDirective,
   ],
   imports: [
     BrowserModule,
